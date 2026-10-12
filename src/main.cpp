@@ -2,7 +2,7 @@
 
 #define GPIO_15 15
 #define GPIO_16 16
-#define GPIO_17 16
+#define GPIO_17 17
 #define RGB_PIN 48
 
 const uint8_t RAINBOW[][3] = {
@@ -77,7 +77,7 @@ void speed_changes(uint16_t interval)
 void speed_change_loop()
 {
     static uint16_t interval = 1000;
-    static uint16_t step = -100;
+    static int16_t step = -100;
     interval += step;
     if (interval <= 100 || interval >= 1000)
     {
